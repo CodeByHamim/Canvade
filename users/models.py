@@ -7,6 +7,7 @@ class CustomUser(AbstractUser):
         ('instructor', 'Instructor'),
         ('student', 'Student'),
     )
+    email = models.EmailField(unique=True)
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='student')
 
     def is_admin(self):
